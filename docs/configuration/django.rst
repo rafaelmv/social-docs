@@ -87,7 +87,19 @@ URLs entries
 ------------
 
 Add URLs entries::
+    
+    from django.urls import path
+    
+    urlpatterns = patterns('',
+        ...
+        path('', include('social_django.urls', namespace='social'))
+        ...
+    )
+    
+For Django 1.11 and lower use url instead of path::
 
+    from django.conf.urls import url
+    
     urlpatterns = patterns('',
         ...
         url('', include('social_django.urls', namespace='social'))
